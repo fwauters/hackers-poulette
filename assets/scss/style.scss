@@ -144,3 +144,15 @@ body {
         }
     }
 }
+
+@media (min-width: 1200px) {
+    body {
+        header {
+            nav {
+                li {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}

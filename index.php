@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="François Wauters">
-	<meta name="description" content="Hackers Poulette support contact form">
-	<meta name="keywords" content="Hackers Pouette, support, contact, form">
+	<meta name="description" content="Code practice, Hackers Poulette support contact form">
+	<meta name="keywords" content="Code practice, Hackers Pouette, support, contact, form">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/img/hackers-poulette-logo.png" type="image/x-icon">
@@ -32,8 +32,8 @@
         </nav>
     </header>
     <main class="container">
-        <h2 class="text-center">Support Team</h2>
-        <h3 class="text-center">Contact form:</h3>
+        <h1 class="text-center">Support Team</h1>
+        <h2 class="text-center">Contact form:</h2>
         <form method="post" action="index.php">
             <section class="row">
                 <section class="container col-6">

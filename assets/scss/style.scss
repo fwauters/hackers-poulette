@@ -1,0 +1,146 @@
+$seaGreen: #0d8187;
+$anthracite: #303030;
+$white: #FFF;
+
+@font-face {
+    font-family: "Bellota";
+    src: url("../fonts/Bellota-Regular-webfont.woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $seaGreen;
+    font-family: "Bellota";
+    color: $anthracite;
+    overflow-x: hidden;
+
+    header {
+        background-color: $white;
+        box-shadow: $anthracite 0px 5px 10px;
+        width: 100vw;
+        height: 130px;
+        margin-top: 5vh;
+
+        img {
+            margin-top: 5px;
+        }
+
+        nav {
+            position: relative;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            
+            .leftNav {
+                display: flex;
+                list-style: none;
+
+                .active {
+                    background-color: $seaGreen;
+                    a {
+                        color: $white;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+                li {
+                    width: 15vw;
+                    height: 25px;
+                    border-radius: 7px 7px 0 0;
+                    box-shadow: $anthracite 0 -1px 2px;
+
+                    a {
+                        color: $anthracite;
+
+                        &:hover {
+                            color: $seaGreen;
+                        }
+                    }
+                }
+            }
+
+            .rightNav {
+                display: flex;
+                list-style: none;
+
+                .active {
+                    background-color: $seaGreen;
+                    a {
+                        color: $white;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+                li {
+                    width: 15vw;
+                    height: 25px;
+                    border-radius: 7px 7px 0 0;
+                    box-shadow: $anthracite 0 -1px 2px;
+
+                    a {
+                        color: $anthracite;
+
+                        &:hover {
+                            color: $seaGreen;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        background-color: $white;
+        box-shadow: $anthracite 0px 5px 10px;
+        margin-top: 5vh;
+
+        h2 {
+            font-size: 2rem;
+            padding-top: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            text-decoration: underline;
+        }
+
+        form {
+            .btn {
+                background-color: $seaGreen;
+                color: $white;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    footer {
+        color: $white;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 576px) {
+    body {
+
+        header {
+            border-radius: 25px;
+        }
+
+        main {
+            border-radius: 25px;
+        }
+    }
+}

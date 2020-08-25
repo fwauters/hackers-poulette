@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "Bellota";
+  src: url("../fonts/Bellota-Regular-webfont.woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d8187;
+  font-family: "Bellota";
+  color: #303030;
+  overflow-x: hidden;
+}
+
+body header {
+  background-color: #FFF;
+  box-shadow: #303030 0px 5px 10px;
+  width: 100vw;
+  height: 130px;
+  margin-top: 5vh;
+}
+
+body header img {
+  margin-top: 5px;
+}
+
+body header nav {
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+body header nav .leftNav {
+  display: flex;
+  list-style: none;
+}
+
+body header nav .leftNav .active {
+  background-color: #0d8187;
+}
+
+body header nav .leftNav .active a {
+  color: #FFF;
+}
+
+body header nav .leftNav .active a:hover {
+  color: #FFF;
+}
+
+body header nav .leftNav li {
+  width: 15vw;
+  height: 25px;
+  border-radius: 7px 7px 0 0;
+  box-shadow: #303030 0 -1px 2px;
+}
+
+body header nav .leftNav li a {
+  color: #303030;
+}
+
+body header nav .leftNav li a:hover {
+  color: #0d8187;
+}
+
+body header nav .rightNav {
+  display: flex;
+  list-style: none;
+}
+
+body header nav .rightNav .active {
+  background-color: #0d8187;
+}
+
+body header nav .rightNav .active a {
+  color: #FFF;
+}
+
+body header nav .rightNav .active a:hover {
+  color: #FFF;
+}
+
+body header nav .rightNav li {
+  width: 15vw;
+  height: 25px;
+  border-radius: 7px 7px 0 0;
+  box-shadow: #303030 0 -1px 2px;
+}
+
+body header nav .rightNav li a {
+  color: #303030;
+}
+
+body header nav .rightNav li a:hover {
+  color: #0d8187;
+}
+
+body main {
+  background-color: #FFF;
+  box-shadow: #303030 0px 5px 10px;
+  margin-top: 5vh;
+}
+
+body main h2 {
+  font-size: 2rem;
+  padding-top: 15px;
+}
+
+body main h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-decoration: underline;
+}
+
+body main form .btn {
+  background-color: #0d8187;
+  color: #FFF;
+  margin-top: 15px;
+}
+
+body footer {
+  color: #FFF;
+  text-align: center;
+  margin-top: 15px;
+}
+
+@media (min-width: 576px) {
+  body header {
+    border-radius: 25px;
+  }
+  body main {
+    border-radius: 25px;
+  }
+}

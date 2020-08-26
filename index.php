@@ -20,7 +20,7 @@
                     <li>Message: ".$_POST['message']."</li></ul>   
             ";
             include_once('./assets/php/mail.php');
-            sendmail($_POST['email'], $name, $_POST['subject'], $_POST['message']);
+            sendmail($_POST['email'], $name, "Confirmation e-mail", $msg);
         }
         else {
             print_r("Every input fields aren't filled !");

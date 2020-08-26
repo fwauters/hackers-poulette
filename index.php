@@ -5,8 +5,20 @@
     else {
         if (isset($_POST['firstname'], $_POST['lastname'], $_POST['gender'],
         $_POST['email'], $_POST['country'], $_POST['message'])) {
-            print_r("Everything is set !");
+
+            print_r("Everything is set ! ");
             $name = $_POST['firstname']. " " .$_POST['lastname'];
+            $msg = "Dear ".$name.",<br />
+                This is an automatic confirmation e-mail.<br />
+                We correctly received your informations and we'll answer you as soon as possible.<br />
+                <ul><li>Firstname: ".$_POST['firstname']."</li>
+                    <li>Lastname: ".$_POST['lastname']."</li>
+                    <li>Gender: ".$_POST['gender']."</li>
+                    <li>E-mail: ".$_POST['email']."</li>
+                    <li>Country: ".$_POST['subject']."</li>
+                    <li>Subject: ".$_POST['subject']."</li>
+                    <li>Message: ".$_POST['message']."</li></ul>   
+            ";
             include_once('./assets/php/mail.php');
             sendmail($_POST['email'], $name, $_POST['subject'], $_POST['message']);
         }
@@ -57,9 +69,9 @@
                     <input name="lastname" class="form-control" type="text">
                     <label for="gender">Gender</label>
                     <select name="gender" class="form-control">
-                        <option value="f" selected>Female</option>
-                        <option value="m">Male</option>
-                        <option value="o">Other</option>
+                        <option value="Other" selected>Other</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
                     </select>
                 </section>
                 <section class="container col-6">

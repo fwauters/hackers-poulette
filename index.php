@@ -1,5 +1,12 @@
 <?php
-    // Data process
+    if (isset($_POST['website'])) {
+        return false;
+    }
+    else {
+        if (isset($_POST['email'])) {
+            mail($_POST['email'], 'testing', 'yo this is a test !');
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -19,7 +26,7 @@
 </head>
 <body>
     <header class="container text-center">
-        <img src="./assets/img/hackers-poulette-logo.png" alt="Hackers Poulette's logo" height="120px">
+        <img src="./assets/img/hackers-poulette-logo.png" alt="Hackers Poulette's logo" height="120">
         <nav>
             <ul class="leftNav">
                 <li><a href="#">Home</a></li>
@@ -43,8 +50,7 @@
                     <input name="lastname" class="form-control" type="text">
                     <label for="gender">Gender</label>
                     <select name="gender" class="form-control">
-                        <option selected>Choose...</option>
-                        <option value="f">Female</option>
+                        <option value="f" selected>Female</option>
                         <option value="m">Male</option>
                         <option value="o">Other</option>
                     </select>
@@ -56,20 +62,21 @@
                     <input name="country" class="form-control" type="text">
                     <label for="subject">Subject</label>
                     <select name="subject" class="form-control">
-                        <option selected>Choose...</option>
-                        <option value="support">Support</option>
-                        <option value="question">Question</option>
-                        <option value="other">Other</option>
+                        <option value="other" selected>Other Issue</option>
+                        <option value="admin">Administrative</option>
+                        <option value="support">Technical Support</option>
+                        <option value="question">General Question</option>
                     </select>
                 </section>
                 <section class="form-group container col-12">
                     <label for="message"></label>
                     <textarea name="message" class="form-control" rows="6" placeholder="Enter your message here ..."></textarea>
+                    <input id="website" name="website" type="text" value=""></input>
                     <section class="text-center">
                         <input type="submit" class="btn center-block" value="Submit"></input>
-                    </section>                   
+                    </section>
                 </section>
-            </section>   
+            </section>
         </form>
     </main>
     <footer>

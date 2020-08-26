@@ -117,6 +117,11 @@ body {
         }
 
         form {
+
+            #website {
+                display: none;
+            }
+            
             .btn {
                 background-color: $seaGreen;
                 color: $white;

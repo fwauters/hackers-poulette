@@ -6,8 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -19,8 +18,7 @@ body {
 
 body header {
   background-color: #FFF;
-  -webkit-box-shadow: #303030 0px 5px 10px;
-          box-shadow: #303030 0px 5px 10px;
+  box-shadow: #303030 0px 5px 10px;
   width: 100vw;
   height: 130px;
   margin-top: 5vh;
@@ -33,17 +31,11 @@ body header img {
 body header nav {
   position: relative;
   bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 body header nav .leftNav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
@@ -64,8 +56,7 @@ body header nav .leftNav li {
   width: 15vw;
   height: 25px;
   border-radius: 7px 7px 0 0;
-  -webkit-box-shadow: #303030 0 -1px 2px;
-          box-shadow: #303030 0 -1px 2px;
+  box-shadow: #303030 0 -1px 2px;
 }
 
 body header nav .leftNav li a {
@@ -77,8 +68,6 @@ body header nav .leftNav li a:hover {
 }
 
 body header nav .rightNav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
@@ -99,8 +88,7 @@ body header nav .rightNav li {
   width: 15vw;
   height: 25px;
   border-radius: 7px 7px 0 0;
-  -webkit-box-shadow: #303030 0 -1px 2px;
-          box-shadow: #303030 0 -1px 2px;
+  box-shadow: #303030 0 -1px 2px;
 }
 
 body header nav .rightNav li a {
@@ -113,8 +101,7 @@ body header nav .rightNav li a:hover {
 
 body main {
   background-color: #FFF;
-  -webkit-box-shadow: #303030 0px 5px 10px;
-          box-shadow: #303030 0px 5px 10px;
+  box-shadow: #303030 0px 5px 10px;
   margin-top: 5vh;
 }
 
@@ -127,6 +114,10 @@ body main h2 {
   font-size: 1.5rem;
   margin-bottom: 25px;
   text-decoration: underline;
+}
+
+body main form #website {
+  display: none;
 }
 
 body main form .btn {
@@ -155,4 +146,3 @@ body footer {
     max-width: 200px;
   }
 }
-/*# sourceMappingURL=style.css.map */

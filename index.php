@@ -4,7 +4,8 @@
     }
     else {
         if (isset($_POST['email'])) {
-            mail($_POST['email'], 'testing', 'yo this is a test !');
+            $mail = $_POST['email'];
+            mail($mail, 'testing', 'yo this is a test !');
         }
     }
 ?>
@@ -71,7 +72,7 @@
                 <section class="form-group container col-12">
                     <label for="message"></label>
                     <textarea name="message" class="form-control" rows="6" placeholder="Enter your message here ..."></textarea>
-                    <input id="website" name="website" type="text" value=""></input>
+                    <input id="website" name="website" type="text"></input>
                     <section class="text-center">
                         <input type="submit" class="btn center-block" value="Submit"></input>
                     </section>

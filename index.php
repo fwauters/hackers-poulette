@@ -1,11 +1,17 @@
 <?php
-    if (isset($_POST['website'])) {
-        return false;
+    if ($_POST['website'] != "") {
+        print_r("This field is invisible, are you a robot like me ?");
     }
     else {
-        if (isset($_POST['email'])) {
-            $mail = $_POST['email'];
-            mail($mail, 'testing', 'yo this is a test !');
+        if (isset($_POST['firstname'], $_POST['lastname'], $_POST['gender'],
+        $_POST['email'], $_POST['country'], $_POST['message'])) {
+            print_r("Everything is set !");
+            $name = $_POST['firstname']. " " .$_POST['lastname'];
+            include_once('./assets/php/mail.php');
+            sendmail($_POST['email'], $name, $_POST['subject'], $_POST['message']);
+        }
+        else {
+            print_r("Every input fields aren't filled !");
         }
     }
 ?>

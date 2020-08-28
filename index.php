@@ -2,13 +2,13 @@
     include('./assets/php/filter.php');
 
     if ($_POST['website'] != "") {
-        print_r("You filled an invisible field, are you a robot like me ?");
+        $currentState = "You filled an invisible field, are you a robot like me ?";
     }
     else {
         if ($firstname != "" AND $lastname != "" AND $_POST['gender'] != ""
         AND $email != "" AND $country != "" AND $message != "") {
 
-            print_r("Everything is set ! ");
+            $currentState = "Everything is set correctly, a confirmation email has been send to you. ";
             $name = $_POST['firstname']. " " .$_POST['lastname'];
             $msg = "<br />Dear ".$name.",<br /><br />
                 This is an automatic confirmation e-mail.<br />
@@ -27,7 +27,7 @@
             sendmail($email, $name, "Confirmation e-mail", $msg);
         }
         else {
-            print_r("Every input fields aren't filled !");
+            $currentState = "Some input fields aren't filled !";
         }
     }
 ?>
@@ -66,40 +66,41 @@
         <h2 class="text-center">Contact form:</h2>
         <form method="post" action="index.php">
             <section class="row">
-                <section class="container col-6">
+                <div class="container col-6">
                     <label for="firstname">Firstname<?php echo "<em style='color:red;'>".$errors['firstname']."</em>"; ?></label>
-                    <input name="firstname" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['firstname']) ? $_POST['firstname'] : '' )?>">
+                    <input name="firstname" id="firstname" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['firstname']) ? $_POST['firstname'] : '' )?>">
                     <label for="lastname">Lastname<?php echo "<em style='color:red;'>".$errors['lastname']."</em>"; ?></label>
-                    <input name="lastname" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['lastname']) ? $_POST['lastname'] : '' )?>">
+                    <input name="lastname" id="lastname" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['lastname']) ? $_POST['lastname'] : '' )?>">
                     <label for="gender">Gender<?php echo "<em style='color:red;'>".$errors['gender']."</em>"; ?></label>
-                    <select name="gender" class="form-control jsClass">
-                        <option value="" selected>...</option>
-                        <option value="Female">Female</option>
-                        <option value="Male">Male</option>
-                        <option value="Other">Other</option>
+                    <select name="gender" id="gender" class="form-control jsClass">
+                        <option value="" <?php echo (isset($_POST['gender'])) ? "" : "selected" ?>>...</option>
+                        <option value="Female" <?php echo ($_POST['gender'] == "Female") ? "selected" : "" ?>>Female</option>
+                        <option value="Male" <?php echo ($_POST['gender'] == "Male") ? "selected" : "" ?>>Male</option>
+                        <option value="Other" <?php echo ($_POST['gender'] == "Other") ? "selected" : "" ?>>Other</option>
                     </select>
-                </section>
-                <section class="container col-6">
+                </div>
+                <div class="container col-6">
                     <label for="email">E-mail<?php echo "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
-                    <input name="email" class="form-control jsClass" type="email" placeholder="name@example.com" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : '' )?>">
-                    <label for="coutry">Country<?php echo "<em style='color:red;'>".$errors['country']."</em>"; ?></label>
-                    <input name="country" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['country']) ? $_POST['country'] : '' )?>">
+                    <input name="email" id="email" class="form-control jsClass" type="email" placeholder="name@example.com" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : '' )?>">
+                    <label for="country">Country<?php echo "<em style='color:red;'>".$errors['country']."</em>"; ?></label>
+                    <input name="country" id="country" class="form-control jsClass" type="text" value="<?php echo (isset($_POST['country']) ? $_POST['country'] : '' )?>">
                     <label for="subject">Subject</label>
-                    <select name="subject" class="form-control">
+                    <select name="subject" id="subject" class="form-control">
                         <option value="Other Issue" selected>Other Issue</option>
                         <option value="Administrative">Administrative</option>
                         <option value="Technical Support">Technical Support</option>
                         <option value="General Question">General Question</option>
                     </select>
-                </section>
-                <section class="form-group container col-12">
-                    <label for="message">&nbsp<?php echo "<em style='color:red;'>".$errors['message']."</em>"; ?></label>
-                    <textarea name="message" class="form-control jsClass" rows="6" <?php echo (isset($_POST['message']) ? ">".$_POST['message'] : "placeholder='Enter your message here ...'>" )?></textarea>
-                    <input id="website" name="website" type="text"></input>
-                    <section class="text-center">
-                        <input type="submit" name="button" class="btn center-block" value="Submit"></input>
-                    </section>
-                </section>
+                </div>
+                <div class="form-group container col-12">
+                    <label for="message">&nbsp;<?php echo "<em style='color:red;'>".$errors['message']."</em>"; ?></label>
+                    <textarea name="message" id="message" class="form-control jsClass" rows="6" <?php echo (isset($_POST['message']) ? ">".$_POST['message'] : "placeholder='Enter your message here ...'>" )?></textarea>
+                    <input id="website" name="website" type="text" />
+                    <div class="text-center">
+                        <input type="submit" name="button" class="btn center-block" value="Submit" />
+                        <?php echo "<p><br />".$currentState."</p>"; ?>
+                    </div>
+                </div>
             </section>
         </form>
     </main>

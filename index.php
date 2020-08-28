@@ -98,7 +98,7 @@
                     <input id="website" name="website" type="text" />
                     <div class="text-center">
                         <input type="submit" name="button" class="btn center-block" value="Submit" />
-                        <?php echo "<p><br />".$currentState."</p>"; ?>
+                        <?php echo "<p><br />".$currentState."</p>";?>
                     </div>
                 </div>
             </section>
